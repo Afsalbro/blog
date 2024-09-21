@@ -55,7 +55,6 @@ const BlogPosts = ({ posts, setPosts, token }) => {
                 </div>
             )}
 
-            {/* Bootstrap Modal */}
             {selectedPost && (
                 <div className="modal fade show" tabIndex="-1" style={{ display: "block" }}>
                     <div className="modal-dialog">
