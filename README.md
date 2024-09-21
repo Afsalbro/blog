@@ -30,81 +30,85 @@ To run this project, you will need the following dependencies:
 
 1. **Clone the repository**:
 
-    
+    ```bash
     git clone https://github.com/Afsalbro/blog.git
     cd blog-backend
+    ```
 
 2. **Install PHP dependencies**:
 
     Run the following command to install all Laravel dependencies via Composer:
 
-    
+    ```bash
     composer install
-    
+    ```
 
 3. **Set up environment variables**:
 
     Copy the `.env.example` file and create your own `.env` file:
 
-    
+    ```bash
     cp .env.example .env
-    
+    ```
 
     Update your `.env` file to include your database credentials:
 
-    
+    ```bash
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
     DB_DATABASE=your_database_name
     DB_USERNAME=your_username
     DB_PASSWORD=your_password
-    
+    ```
 
 4. **Generate an application key**:
 
     Laravel requires an application encryption key. Run this command to generate one:
 
-    
+    ```bash
     php artisan key:generate
-    
+    ```
 
 5. **Run database migrations**:
 
     Migrate the database tables by running:
 
-    
+    ```bash
     php artisan migrate
+    ```
 
 6. **Run database seed**:
 
-    Run the following command for seed:
-    
+    Run the following command to seed your database:
+
+    ```bash
     php artisan db:seed UserSeeder
+    ```
 
 ### Frontend (React)
 
 1. **Navigate to the frontend directory** (if the React app is in a separate folder like `/frontend`):
 
-    
+    ```bash
     cd blog-frontend
-    
+    ```
 
 2. **Install Node.js dependencies**:
 
     Install the front-end dependencies via npm:
 
-    
+    ```bash
     npm install
-    
+    ```
 
 3. **Run the React development server**:
 
     Start the React app in development mode:
 
-    
+    ```bash
     npm start
-    
+    ```
 
     By default, the React app will be accessible at `http://localhost:3000`.
 
@@ -114,9 +118,9 @@ To run this project, you will need the following dependencies:
 
     In the root of your Laravel project (not the frontend directory), run:
 
-    
+    ```bash
     php artisan serve
-    
+    ```
 
     This will start the Laravel server at `http://localhost:8000`.
 
@@ -171,7 +175,7 @@ To run this project, you will need the following dependencies:
    While this project is a monolithic structure, dividing the frontend (React) and backend (Laravel) into separate services provides better scalability. However, the current setup may be limited in terms of microservices architecture.
 
 2. **Session vs Token-Based Authentication**:  
-   The choice between session-based and token-based (Sanctrum) authentication was considered. For simplicity, Laravel's built-in session-based authentication was used, but in larger projects, Sanctrum might be a better choice for a full SPA.
+   The choice between session-based and token-based (Sanctum) authentication was considered. For simplicity, Laravel's built-in session-based authentication was used, but in larger projects, Sanctum might be a better choice for a full SPA.
 
 3. **Development Time vs Complexity**:  
    While Laravel Mix (or Vite) could be used to combine the frontend and backend into a single deployment pipeline, separating React and Laravel completely helps reduce complexity but may require additional setup for production.
